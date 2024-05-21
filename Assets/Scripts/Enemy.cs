@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         Vector3 direction = target.position - transform.position;
-        Debug.Log("direction:" + direction);
+        //Debug.Log("direction:" + direction);
         transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
 
         if (Vector3.Distance(transform.position, target.position) <= 0.4f) 
@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
 
     void GetNextWaypoint()
     {
-        Debug.Log("waypoint index:" + waypointIndex);
+        //Debug.Log("waypoint index:" + waypointIndex);
         
         if (waypointIndex >= Waypoints.points.Length-1)
        {
