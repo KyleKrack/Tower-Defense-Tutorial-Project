@@ -10,6 +10,9 @@ public class GameOVer : MonoBehaviour
 {
 
     public TextMeshProUGUI roundsText;
+    public sceneFader fader;
+    public string menuSceneName = "MainMenu";
+    
 
     private void OnEnable()
     {
@@ -19,11 +22,12 @@ public class GameOVer : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
+        fader.fadeTo(SceneManager.GetActiveScene().name);
     }
 
     public void Menu()
     {
+        fader.fadeTo(menuSceneName);
         Debug.Log("Go to menu");
     }
     
