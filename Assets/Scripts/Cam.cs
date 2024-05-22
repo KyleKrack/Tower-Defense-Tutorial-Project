@@ -6,7 +6,7 @@ public class Cam : MonoBehaviour
 {
     public float panSpeed = 30f;
     public float panBorderThickness = 10f;
-    private bool doMovement = true;
+    //private bool doMovement = true;
     public float scrollSpeed = 5f;
     public float minY = 10f;
     public float maxY = 80f; 
@@ -20,12 +20,7 @@ public class Cam : MonoBehaviour
             this.enabled = false;
             return;
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-            doMovement = !doMovement; 
         
-        if (!doMovement)
-            return; 
         
         if (Input.GetKey("w") || Input.mousePosition.y >= Screen.height - panBorderThickness) 
         {
