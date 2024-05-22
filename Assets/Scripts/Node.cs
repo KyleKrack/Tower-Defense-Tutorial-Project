@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.EventSystems; 
 using UnityEngine;
+using Random = System.Random;
 
 public class Node : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Node : MonoBehaviour
     private Renderer rend;
     private Color startColor;
     public Vector3 offSet;
+    public Color notEnoughMoneyColor; 
 
     [Header("Optional:")]
     public GameObject turret;
@@ -67,7 +69,19 @@ public class Node : MonoBehaviour
         {
             return; 
         }
-        rend.material.color = hoverColor; 
+
+        if (buildmanager.HasMoney)
+        {
+            rend.material.color = hoverColor; 
+        }
+        else
+        {
+            rend.material.color = notEnoughMoneyColor;
+        }
+        
+        
+        
+        
     }
 
     private void OnMouseExit()
