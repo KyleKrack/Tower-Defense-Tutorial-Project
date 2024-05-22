@@ -113,6 +113,20 @@ public class Node : MonoBehaviour
         Debug.Log("Turret upgraded! ");
     }
 
+    public void sellTurret()
+    {
+        //spawn cool effect
+        GameObject effect = (GameObject)Instantiate(buildmanager.sellEffect, GetBuildPosition(), Quaternion.identity); 
+        Destroy(effect, 5f);
+        
+        PlayerStats.money += turretBlueprint.GetSellAmount(); 
+        Destroy(turret);
+        turretBlueprint = null;
+        
+
+    }
+    
+    
 
     private void OnMouseEnter()
     {

@@ -1817,13 +1817,13 @@ MonoBehaviour:
   missileLauncher:
     prefab: {fileID: 5172681696543255997, guid: 22d2e843dc3566744bc414fd4f61e717, type: 3}
     cost: 250
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 100
+    upgradedPrefab: {fileID: 5172681696543255997, guid: 5248a6aa078a8954a83debeef4febfbc, type: 3}
+    upgradeCost: 150
   laserBeamer:
     prefab: {fileID: 4314153531224910081, guid: 943176e384247c84bb4af213a906c9b8, type: 3}
     cost: 350
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 100
+    upgradedPrefab: {fileID: 4314153531224910081, guid: feaead00e14710d48a49bca1e87b11d9, type: 3}
+    upgradeCost: 350
 --- !u!850595691 &196348583
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -1952,6 +1952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildEffect: {fileID: 6878229607081144986, guid: b141e033f4cc40745b58ea202b2660ef, type: 3}
+  sellEffect: {fileID: 6878229607081144986, guid: fd5635237bd636449a75f27d5913f50f, type: 3}
   nodeUI: {fileID: 1084956961}
 --- !u!114 &202413623
 MonoBehaviour:
@@ -8953,6 +8954,8 @@ MonoBehaviour:
   UI: {fileID: 2020165972}
   upgradeCost: {fileID: 1798626156}
   upgradeButton: {fileID: 865234745}
+  sellAmount: {fileID: 1336572519}
+  sellButton: {fileID: 1163142648}
 --- !u!4 &1084956962
 Transform:
   m_ObjectHideFlags: 0
@@ -9615,7 +9618,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1163142649}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1084956961}
+        m_TargetAssemblyTypeName: NodeUI, Assembly-CSharp
+        m_MethodName: Sell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1163142649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10825,7 +10840,7 @@ GameObject:
   - component: {fileID: 1336572520}
   - component: {fileID: 1336572519}
   m_Layer: 0
-  m_Name: Sell
+  m_Name: amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12110,7 +12125,7 @@ GameObject:
   - component: {fileID: 1438570416}
   - component: {fileID: 1438570415}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: UPGRADE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19240,7 +19255,7 @@ GameObject:
   - component: {fileID: 2051098821}
   - component: {fileID: 2051098820}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: SELL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
