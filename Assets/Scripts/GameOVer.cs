@@ -9,16 +9,9 @@ using UnityEngine.SceneManagement;
 public class GameOVer : MonoBehaviour
 {
 
-    public TextMeshProUGUI roundsText;
     public sceneFader fader;
     public string menuSceneName = "MainMenu";
     
-
-    private void OnEnable()
-    {
-        roundsText.color = Color.white;
-        roundsText.text = PlayerStats.Rounds.ToString(); 
-    }
 
     public void Retry()
     {
