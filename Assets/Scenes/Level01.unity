@@ -2057,8 +2057,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55eedee7ec2f31d459a29e778de4c85b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1357276677815741702, guid: 96f36aeabd5d62741aea5868daef562b, type: 3}
-  timeBetweenWaves: 10
+  waves:
+  - enemy: {fileID: 4818886461315892592, guid: 4ecf2064167cada42819551f8297ace2, type: 3}
+    count: 1
+    rate: 2
+  - enemy: {fileID: 4818886461315892592, guid: 4ecf2064167cada42819551f8297ace2, type: 3}
+    count: 2
+    rate: 2
+  - enemy: {fileID: 4818886461315892592, guid: 4ecf2064167cada42819551f8297ace2, type: 3}
+    count: 5
+    rate: 2
+  - enemy: {fileID: 4818886461315892592, guid: 43d2d97e669abd2498f9c78281c6ccf3, type: 3}
+    count: 3
+    rate: 1
+  - enemy: {fileID: 4818886461315892592, guid: 43d2d97e669abd2498f9c78281c6ccf3, type: 3}
+    count: 10
+    rate: 3
+  timeBetweenWaves: 2
+  gameManager: {fileID: 202413624}
   waveCountDownText: {fileID: 1603969138}
   spawnPoint: {fileID: 1250732271}
 --- !u!4 &202413621
@@ -2118,6 +2134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 207740144}
+  nextLevel: Level02
+  levelToUnlock: 2
+  fader: {fileID: 264729591}
 --- !u!114 &202413625
 MonoBehaviour:
   m_ObjectHideFlags: 0
